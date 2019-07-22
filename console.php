@@ -2,7 +2,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
-use App\Automate;
+use App\Command\Automate;
 
 $app = new Application('Console App', 'v1.0.0');
 $app->add(new Automate());
