@@ -5,23 +5,23 @@ namespace App\Command;
 
 use App\Definition\Logger;
 use App\Object\LoggerEmpty;
-use App\Object\SevenZero;
+use App\Object\Calcul;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 
-class Automate extends Command
+class SevenZero extends Command
 {
     public function configure()
     {
         $this->setName('sevenZero')
-            ->setDescription('PHP 7.0 new features');
+            ->setDescription('Some PHP 7.0 new features');
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $sevenZero = new SevenZero();
+        $sevenZero = new Calcul();
 
         //Scalar type declarations
         $output->writeln($sevenZero->scalarSum(1, 5));
