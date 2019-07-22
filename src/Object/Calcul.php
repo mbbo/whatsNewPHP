@@ -4,7 +4,7 @@
 namespace App\Object;
 
 
-class SevenZero
+class Calcul
 {
     public function scalarSum(int $a, int $b) {
         return $a + $b;
