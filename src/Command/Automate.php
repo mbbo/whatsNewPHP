@@ -3,6 +3,8 @@
 
 namespace App\Command;
 
+use App\Definition\Logger;
+use App\Object\LoggerEmpty;
 use App\Object\SevenZero;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -39,5 +41,28 @@ class Automate extends Command
         $output->writeln(1 <=> 1);
         $output->writeln(1 <=> 2);
         $output->writeln(2 <=> 1);
+
+        //Constant arrays using define()
+        define('ANIMALS', [
+            'dog',
+            'cat',
+            'bird'
+        ]);
+        $output->writeln(ANIMALS[1]);
+
+        //Anonymous classes
+        $app = new LoggerEmpty();
+        $app->setLogger(new class implements Logger {
+            public function log(string $msg) {
+                echo $msg;
+            }
+        });
+
+        var_dump($app->getLogger());
+
+        //Unicode codepoint escape syntax
+        echo "\u{aa}";
+        echo "\u{0000aa}";
+        echo "\u{9999}";
     }
 }
