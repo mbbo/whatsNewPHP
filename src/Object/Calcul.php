@@ -6,11 +6,13 @@ namespace App\Object;
 
 class Calcul
 {
-    public function scalarSum(int $a, int $b) {
+    public function scalarSum(int $a, int $b)
+    {
         return $a + $b;
     }
 
-    public function sum($a, $b): float {
+    public function sum($a, $b): float
+    {
         return $a + $b;
     }
     
